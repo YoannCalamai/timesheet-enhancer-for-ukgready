@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <title i18n="popup_menu_title">Timesheet Enhancer for UKG Ready - Settings</title>
+    <meta charset="UTF-8" />
+	<style type="text/css">
+	body {
+		background-color: #005151;
+	}
+	
+	.main {
+	  background-color:#fff;
+	  margin: auto;
+	  width: 50%;
+	  border: 3px solid #005151;
+	  padding: 10px;
+	}
+
+	.controlpanel {
+	  background-color:#fff;
+	  width:100%;
+	  margin-top:20px;
+	}
+	
+	a {
+		color:#30CEBB;
+	}
+
+	h3{
+		color:#005151;
+	}
+
+	#header-text {
+		font-weight:bold;
+		font-size:2em;
+		display:inline-block;
+		color: #005151;
+	}
+	
+	#header-text>span {
+		color: #30CEBB;
+	}
+
+	table{
+		width:100%; 
+		height:300px; 
+		border-spacing: 0;
+    	border-collapse: separate;
+	}
+
+	td, th {
+    	padding: 0;
+	}
+
+	#sidetext{
+		margin:30px 10px; 
+		font-size:0.8em;
+		color:#fff;
+	}
+
+	.left-td{
+		width:250px;
+		background-color:#005151; 
+	}
+
+    input:not(.taginput) {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      bottom: 0;
+    }
+	
+    label {
+	  display: inline-block;
+	  position: relative;
+	  height: 22px;
+	  width: 40px;
+	  background-color: #fff;
+	  cursor: pointer;
+	  font-size: 0; 
+	  color: transparent;
+	  border-radius: 22px;
+	  transition: background-color 500ms ease;
+    }
+	  
+	label:after {
+      content: '';
+      display: block;
+      height: 18px;
+      width: 18px;
+      position: absolute;
+      top: 2px;
+      right: 20px;
+      border-radius: 50%;
+      background-color: #e8e8e8;
+      box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
+	  transition: right 300ms ease, 
+          background-color 300ms ease, 
+          box-shadow 300ms ease;
+    }
+	  
+	input:not(:checked) + label {
+      border:solid 1px #eee;
+    }
+	
+	input:checked + label {
+      border:solid 1px #eee;
+      background: #30CEBB;
+    }
+	
+	input:checked + label:after {
+      right: 2px;
+      background-color: #fff;
+      box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+    }
+
+	label {
+	  line-height: 44px;
+	  vertical-align: middle;
+	}
+	</style>
+
+  </head>
+  <body>
+	<div class="main">
+		<table>
+		<tr valign="top">
+		<td class="left-td">
+			<div id="sidetext">
+				TimeSheet Enhancer for UKG Ready is a Chrome extension to add extra options to the Timesheet of the product UKG Ready.
+				<br>
+				<br>
+				UKG Ready is a Human Capital Management application from UKG (<a href="https://www.ukg.com">ukg.com</a>). 
+				<br>
+				You need a licence to use it. Please contact UKG for informations about licence.
+				<br>
+				<br>
+				<span style="font-weight:bold;">This extension is NOT build by UKG. DO NOT contact UKG for support on it.</span>
+				<br>
+				<br>
+				<br>
+				<br>
+				<span>It is developed by me (Yoann Calamai) on my free time.</span>
+				<br>
+				<br>
+				For bugs, feedback and feature suggestions, please contact me on the github page of the project.
+			</div>
+		</td>
+		<td>
+			<div style="margin:40px;">
+				<div id="header-text"><span>Timesheet Enhancer for UKG Ready</span></div>
+				<div class="controlpanel">
+					<div><h3>Settings</h3></div>
+					<fieldset>
+						<div>
+						  <input type="checkbox" id="chkCountersInEntryTab" name="CountersInEntryTab" />
+						  <label for="chkCountersInEntryTab" id="lblCountersInEntryTab">Summary by Day counters visible into the Time Entry tab</label>
+						  <span>Summary by Day counters are visibles into the Time Entry tab</span>
+						</div>
+						<div>
+						  <input type="checkbox" id="chkDebugMode" name="DebugMode" />
+						  <label for="chkDebugMode" id="lblDebugMode">DebugMode</label>
+						  <span>Debug mode</span>
+						</div>
+						<div>
+						  <input class="taginput" type="text" id="txtHiddenColumns" name="HiddenColumns" />
+						  <span>Hidden Columns (separated by ;)</span>
+						</div>
+					  </fieldset>
+				</div>
+			</div>
+		</td>
+		</tr>
+		</table>
+	</div>
+	<script src="scripts/options.js" type="module"></script>
+  </body>
+</html>

@@ -19,7 +19,7 @@ For bugs, feedback and feature suggestions, please contact me on the github page
  - Find and select the app or extension folder
 
 # Credits
-Icons made by Lorc <https://lorcblog.blogspot.com/> under CC-BY-3.0 licence provided by game-icons.net <https://game-icons.net/1x1/lorc/magnifying-glass.html>
+Sunglasses icon made by Delapouite <https://delapouite.com/> under CC-BY-3.0 licence provided by game-icons.net <https://game-icons.net/1x1/delapouite/sunglasses.html>
 
 # Licence
 Copyright (C) 2024 Yoann Calamai

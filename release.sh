@@ -13,7 +13,7 @@ mv -f manifest-internal.json manifest.json
 zip -r ../release-internal-$version.zip .
 
 echo "Creating public extension chrome package"
-cp -f ../../src/manifest-internal.json manifest.json
+cp -f ../../src/manifest.json manifest.json
 rm readme.txt
 zip -r ../release-$version.zip .
 

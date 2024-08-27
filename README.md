@@ -1,4 +1,7 @@
 # Timesheet Enhancer for UKG Ready
+
+![timesheet screenshot](https://github.com/YoannCalamai/timesheet-enhancer-for-ukgready/blob/main/images/screenshot-1280.jpg?raw=true)
+
 Timesheet Enhancer for UKG Ready is a Chrome extension to add additional options to UKG Ready's timesheet.
 UKG Ready is a human capital management solution developed by UKG (https://www.ukg.com). 
 

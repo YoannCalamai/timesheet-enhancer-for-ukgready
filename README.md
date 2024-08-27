@@ -1,15 +1,31 @@
 # Timesheet Enhancer for UKG Ready
-Timesheet Enhancer for UKG Ready is a Chrome extension to add extra options to the Timesheet of the product UKG Ready from UKG.
+Timesheet Enhancer for UKG Ready is a Chrome extension to add additional options to UKG Ready's timesheet.
+UKG Ready is a human capital management solution developed by UKG (https://www.ukg.com). 
 
-UKG Ready is a Human Capital Management application from UKG https://www.ukg.com. 
+This chrome extension improves the UKG Ready's timesheet via 2 features:
+ - Visualize the counters in the "Summary by Day" tab in the "Time Entry" tab
+ - Hide columns in the "Time entry" tab
 
+You need a license to use UKG Ready. Please contact UKG for a demonstration of this incredible product.
 
-You need a licence to use it. Please contact UKG for informations about licence.
+**This extension is NOT developed by UKG. DO NOT CONTACT UKG for help with this extension.**
 
-**This extension is NOT build by UKG. DO NOT contact UKG for support on it.**
+To report a bug or suggest a feature, please contact me on the project github page (https://github.com/YoannCalamai/timesheet-enhancer-for-ukgready).
 
+## French description
 
-For bugs, feedback and feature suggestions, please contact me on the github page of the project.
+Timesheet Enhancer for UKG Ready est une extension Chrome pour ajouter des options supplémentaires à la feuille de temps du produit UKG Ready de UKG.
+UKG Ready est une solution de gestion du capital humain développée par UKG (https://www.ukg.com). 
+
+Cette extension chrome améliore la feuille de temps de UKG Ready via 2 fonctionnalités :
+ - Visualiser les compteurs de l'onglet "Résumé par jour" dans l'onglet "Saisie de temps"
+ - Masquer des colonnes dans l'onglet "Saisie de temps"
+
+Vous avez besoin d'une licence pour utiliser UKG Ready. S'il vous plaît, contactez UKG pour une démonstration de ce produit incroyable.
+
+**Cette extension n'est PAS développée par UKG. NE CONTACTEZ PAS UKG pour obtenir de l'aide par rapport à cette extension.**
+
+Pour signaler un bogue ou suggerer un fonctionnalité, veuillez me contacter sur la page github du projet (https://github.com/YoannCalamai/timesheet-enhancer-for-ukgready).
 
 # Manual installation for Chromium or Google Chrome
  - Unzip the package where you know you can find it again (eg, My Documents)

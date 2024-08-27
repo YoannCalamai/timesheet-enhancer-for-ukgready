@@ -773,7 +773,7 @@ function getMonthFromString(monthname){
                   'jun.':5,'juin':5,
                   'jul.':6,'juil':6,
                   'aug.':7,'août':7,
-                  'sep.':8,
+                  'sep.':8,'sept':8,
                   'oct.':9,
                   'nov.':10,
                   'dec.':11};

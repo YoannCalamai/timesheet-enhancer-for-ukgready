@@ -247,10 +247,20 @@ function addWeeklyCountersToTable(weeklydata, tsFormTableBody, initialNbOfColumn
     //look for the position of the week.date_to row
     const lastDow = new Date(w.date_to);
     const rowposition = findRowPositionByDate(tsFormTableBody.childNodes, lastDow, startdate, enddate);
-
+    
     //insert the row after the last row
-    if(rowposition > 0){
-      const index = rowposition+1;
+    if(rowposition >= 0){
+
+      // get page language
+      const lang = getLanguage();
+
+      // get the number of sunday rows without exception
+      const lastDowStr = `${lastDow.toLocaleDateString(lang,{weekday:"short"}).toUpperCase()} ${lastDow.getDate()} ${lastDow.toLocaleDateString(lang,{month:"short"})}`;
+      const sel = '*:not([id^="exception"])[data-group-date*="'+lastDowStr+'"]';
+      const lastDowRows = tsFormTableBody.querySelectorAll(sel).length;
+
+      // calculate index
+      const index = rowposition+lastDowRows;
       if(index+1 < tsFormTableBody.childNodes.length)
         tsFormTableBody.insertBefore(tr, tsFormTableBody.childNodes[index]);
       else
@@ -781,6 +791,30 @@ function getMonthFromString(monthname){
   if(monthshortname.length === 3) monthshortname = monthshortname + ".";
   const month = months[monthshortname];
   return month;
+}
+
+/* return the language of the page 
+** based on the save button label
+** 
+** @returns {string}
+*/
+function getLanguage(){
+  const languages = {
+    'en': 'Save',
+    'fr': 'Enregistrer'
+  };
+
+  // default language is English
+  let currentLanguage = "en";
+
+  Object.keys(languages).forEach(key => {
+    const sel = 'button[title][type="button"][aria-label="'+languages[key]+'"]';
+    if (document.querySelector(sel) !== null){
+      currentLanguage = key;
+    }
+  });
+
+  return currentLanguage;
 }
 
 /* return the day of the week before the

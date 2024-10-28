@@ -28,3 +28,8 @@ document.querySelector('#btnOpenSettings').addEventListener('click', function ()
 		window.open(chrome.runtime.getURL('options.html'));
 	}
 });
+
+
+
+document.querySelector('#btnDebuganalyzer').addEventListener('click', () =>
+		window.open(chrome.runtime.getURL('debuganalyzer.html')));

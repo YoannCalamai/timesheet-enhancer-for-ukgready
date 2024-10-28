@@ -1,0 +1,57 @@
+<!-- 
+---- UKG Ready Timesheet Debug Save json Analyzer
+---- @version 20241024
+---- @author Yoann Calamai
+--->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKG Ready Timesheet Debug Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="styles/ready.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <h1>UKG Ready Timesheet Debug Analyzer</h1>
+
+    <textarea id="txtJsonInput" class="rounded-input" rows="2" placeholder='Paste your JSON here...'></textarea>
+    <br>&nbsp;<br>
+    <button id="btnSubmitJson" class="rounded-button">Analyze the JSON Debug data</button>
+    <br>&nbsp;<br>
+    <hr>
+    <br>&nbsp;<br>
+    <div id="filterSection" style="display: none;">
+    <input type="text" id="filterInput" class="rounded-input" placeholder="Filter by rule...">
+    <select id="dateFilterSelect" class="rounded-select">
+        <option value="">Filter by date</option>
+    </select>
+    <label for="threshold">Red highlight threshold (in milliseconds)</label>
+    <input type="number" id="threshold" class="rounded-input" placeholder="Duration in minutes" value="100" />
+    </div>
+
+    <div id="tableSection" class="table-container" style="display: none;">
+        <table id="ruleTable">
+            <thead>
+                <tr>
+                    <th>Rules</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+            <tfoot id="tableFooter"></tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+    <button id="backToTop" class="rounded-button" style="display: none;">Back to Top</button>
+
+    <script src="scripts/debuganalyzer.js"></script>
+
+</body>
+
+</html>

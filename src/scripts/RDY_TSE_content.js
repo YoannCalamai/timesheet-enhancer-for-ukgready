@@ -292,6 +292,8 @@ function findRowPositionByDate(trlist, day, startdate, enddate){
     
     // get date from the row text
     const d = getDateFromTSTableTitleRow(node.dataset.groupDate, startdate, enddate);
+    // set to 1h because of DST
+    day.setHours(1,0,0,0);
     return d.getTime() === day.getTime();
   });
   return pos;
@@ -310,13 +312,21 @@ function getDateFromTSTableTitleRow(dateTitleRow, startdate, enddate){
   const d = rowdate[1];
   const m = getMonthFromString(rowdate[2]);
 
+  // set to 1h because of DST
+  startdate.setHours(1,0,0,0);
+  enddate.setHours(1,0,0,0);
+
   let loop = new Date(startdate);
+  // set to 1h because of DST
+  loop.setHours(1,0,0,0);
   while(loop <= enddate){
     if(loop.getDate() == d && loop.getMonth() == m)
       return loop;
 
     let nextday = loop.setDate(loop.getDate() +1);
     loop = new Date(nextday);
+    // set to 1h because of DST
+    loop.setHours(1,0,0,0);
   }
 }
 
@@ -423,13 +433,15 @@ function addDailyCountersToTableBody(counters, tsFormTableBody, startdate, endda
   }
 
   // remove the filler last column
-  removeAllEmptyLastCol(tsFormTableBody.childNodes);
+  if(tsFormTableBody.childNodes.length >0)
+    removeAllEmptyLastCol(tsFormTableBody.childNodes);
 
   // add column
   tsFormTableBody.childNodes.forEach(tr => { addBodyColumn(tr, counters, startdate, enddate) });
 
   // add the filler last column
-  addEmptyLastColToTrList(tsFormTableBody.childNodes);
+  if(tsFormTableBody.childNodes.length >0)
+    addEmptyLastColToTrList(tsFormTableBody.childNodes);
 }
 
 /* insert counter daily values to the table body
@@ -449,8 +461,14 @@ function addBodyColumn(tr, counters, startdate, enddate) {
   const day = getDateFromTSTableTitleRow(tr.dataset.groupDate, startdate, enddate);
 
   // get counters of the day
-  const dailyrecord = counters.filter(daily => new Date(daily.date).getTime() === day.getTime())
-    .map(m => m.items);
+  const dailyrecord = counters.filter(daily => {
+    // set to 1h because of DST
+    return new Date(daily.date + " 01:00:00:00").getTime() === day.getTime();
+  }).map(m => m.items);
+  
+  if (dailyrecord.length === 0){ 
+     return;
+  }
   const dailycounters = dailyrecord[0].filter(c => c.type === 'COUNTER');
 
   dailycounters.forEach((cnt) => {

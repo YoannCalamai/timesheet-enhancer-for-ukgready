@@ -2,7 +2,7 @@
 ** Timesheet Enhancer for UKG Ready is a chrome extension to add some
 ** extra options to the Timesheet of the product UKG Ready.
 ** UKG Ready is a product from UKG <https://www.ukg.com>
-** Copyright (C) 2024 Yoann Calamai
+** Copyright (C) 2024-2025 Yoann Calamai
 **
 ** This program is free software: you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -458,7 +458,7 @@ function addBodyColumn(tr, counters, startdate, enddate) {
   if (tr.id.startsWith("exception_")) return;
 
   // get day from tr
-  const day = getDateFromTSTableTitleRow(tr.dataset.groupDate, startdate, enddate);
+  const day = getDateFromTSTableTitleRow(tr.dataset.groupDate, startdate, enddate);  
 
   // get counters of the day
   const dailyrecord = counters.filter(daily => {
@@ -793,9 +793,9 @@ function getWeekdayFromString(dayname){
 ** @returns {number}
 */
 function getMonthFromString(monthname){
-  const months = {'jan.':0,
-                  'feb.':1,'fev.':2,
-                  'mar.':2,
+  const months = {'jan.':0,'janv':0,
+                  'feb.':1,'févr':1,
+                  'mar.':2,'mars':2,
                   'apr.':3,'avr.':3,
                   'may.':4,'mai.':4,
                   'jun.':5,'juin':5,
@@ -804,7 +804,7 @@ function getMonthFromString(monthname){
                   'sep.':8,'sept':8,
                   'oct.':9,
                   'nov.':10,
-                  'dec.':11};
+                  'dec.':11,'déc.':11};
   let monthshortname = monthname.toLowerCase().substr(0,4).trim();
   if(monthshortname.length === 3) monthshortname = monthshortname + ".";
   const month = months[monthshortname];

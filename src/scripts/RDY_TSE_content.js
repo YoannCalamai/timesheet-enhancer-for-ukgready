@@ -516,7 +516,7 @@ function createTotalCounterCell(value) {
 ** @returns {Element} HTML element
 */
 function createDailyCell(cnt) {
-  const value = (cnt.value>0) ? cnt.formatted_value : "-";
+  const value = (cnt.value === 0) ? "-" : cnt.formatted_value;
 
   const classesForFirstDiv = ["u-medium-font"];
   if (cnt.value === 0) classesForFirstDiv.push("c-table__content-inactive");

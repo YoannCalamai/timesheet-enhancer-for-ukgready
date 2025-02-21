@@ -911,8 +911,6 @@ async function getCookies(baseurl) {
 ** @returns {string} session cookie
 */
 function buildCookie(cookies) {
-  // LastLoginServer
-  const LastLoginServer = cookies.find((c) => c.name == "LastLoginServer");
   // JSESSIONID
   const JSESSIONID = cookies.find((c) => c.name == 'JSESSIONID');
   // XSRF-TOKEN
@@ -924,7 +922,7 @@ function buildCookie(cookies) {
   // _dd_s= --> this is mandatory to connect
   const _dd_s = cookies.find((c) => c.name == "_dd_s");
 
-  return `${_dd_s.name}=${_dd_s.value};${LastLoginServer.name}=${LastLoginServer.value};${JSESSIONID.name}=${JSESSIONID.value};${XSRFTOKEN.name}=${XSRFTOKEN.value};${LastLoginTime.name}=${LastLoginTime.value};${lbSession.name}=${lbSession.value}`;
+  return `${_dd_s.name}=${_dd_s.value};${JSESSIONID.name}=${JSESSIONID.value};${XSRFTOKEN.name}=${XSRFTOKEN.value};${LastLoginTime.name}=${LastLoginTime.value};${lbSession.name}=${lbSession.value}`;
 }
 
 /// --------------------------------

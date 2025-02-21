@@ -1,7 +1,7 @@
 {
   "name": "Timesheet Enhancer for UKG Ready",
   "description": "Enhance the Timesheet experience in UKG Ready. This extension is NOT supported by UKG.",
-  "version": "2025.01.28.1",
+  "version": "2025.02.21.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "scripts/background.js"

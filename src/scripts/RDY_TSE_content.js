@@ -2,7 +2,7 @@
 ** Timesheet Enhancer for UKG Ready is a chrome extension to add some
 ** extra options to the Timesheet of the product UKG Ready.
 ** UKG Ready is a product from UKG <https://www.ukg.com>
-** Copyright (C) 2024-2025 Yoann Calamai
+** Copyright (C) 2024-2026 Yoann Calamai
 **
 ** This program is free software: you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by

@@ -255,7 +255,9 @@ function addWeeklyCountersToTable(weeklydata, tsFormTableBody, initialNbOfColumn
       const lang = getLanguage();
 
       // get the number of sunday rows without exception
-      const lastDowStr = `${lastDow.toLocaleDateString(lang,{weekday:"short"}).toUpperCase()} ${lastDow.getDate()} ${lastDow.toLocaleDateString(lang,{month:"short"})}`;
+      const weekday = `${lastDow.toLocaleDateString(lang,{weekday:"short"}).toUpperCase()}`;
+      const point = (lang === 'de') ? "." : ""; // Ready write short weekday followed by a point for German
+      const lastDowStr = `${weekday}${point} ${lastDow.getDate()} ${lastDow.toLocaleDateString(lang,{month:"short"})}`;
       const sel = '*:not([id^="exception"])[data-group-date*="'+lastDowStr+'"]';
       const lastDowRows = tsFormTableBody.querySelectorAll(sel).length;
 

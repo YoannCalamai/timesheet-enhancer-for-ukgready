@@ -66,7 +66,7 @@ async function TimeSheetLoadedWatcher(isDebugModeEnabled) {
       const tsSelectedTab = document.querySelector("li > button[aria-selected='true']");
 
       // if the timesheet form is loaded AND save button is enabled AND Time Entry tab is selected
-      const saveButtonNames = ["Save", "Enregistrer"]
+      const saveButtonNames = ["Save", "Enregistrer", "Speichern"]
       if (tsForm &&
         saveButtonNames.includes(mutation.target.ariaLabel) &&
         tsSelectedTab.dataset.category === "category-TIME_ENTRY") {
@@ -795,16 +795,16 @@ function getWeekdayFromString(dayname){
 function getMonthFromString(monthname){
   const months = {'jan.':0,'janv':0,
                   'feb.':1,'févr':1,
-                  'mar.':2,'mars':2,
+                  'mar.':2,'mars':2,'märz':2,
                   'apr.':3,'avr.':3,
-                  'may.':4,'mai.':4,
-                  'jun.':5,'juin':5,
-                  'jul.':6,'juil':6,
+                  'may.':4,'mai.':4,'mai':4,
+                  'jun.':5,'juin':5,'juni':5,
+                  'jul.':6,'juil':6,'juli':6,
                   'aug.':7,'août':7,
                   'sep.':8,'sept':8,
-                  'oct.':9,
+                  'oct.':9,'okt.':9,
                   'nov.':10,
-                  'dec.':11,'déc.':11};
+                  'dec.':11,'déc.':11,'dez.':11};
   let monthshortname = monthname.toLowerCase().substr(0,4).trim();
   if(monthshortname.length === 3) monthshortname = monthshortname + ".";
   const month = months[monthshortname];
@@ -819,7 +819,8 @@ function getMonthFromString(monthname){
 function getLanguage(){
   const languages = {
     'en': 'Save',
-    'fr': 'Enregistrer'
+    'fr': 'Enregistrer',
+    'de': 'Speichern'
   };
 
   // default language is English

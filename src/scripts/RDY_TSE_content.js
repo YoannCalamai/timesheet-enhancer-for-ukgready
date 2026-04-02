@@ -919,10 +919,8 @@ function buildCookie(cookies) {
   const LastLoginTime = cookies.find((c) => c.name == "LastLoginTime");
   // lbSession
   const lbSession = cookies.find((c) => c.name == "lbSession");
-  // _dd_s= --> this is mandatory to connect
-  const _dd_s = cookies.find((c) => c.name == "_dd_s");
-
-  return `${_dd_s.name}=${_dd_s.value};${JSESSIONID.name}=${JSESSIONID.value};${XSRFTOKEN.name}=${XSRFTOKEN.value};${LastLoginTime.name}=${LastLoginTime.value};${lbSession.name}=${lbSession.value}`;
+  
+  return `${JSESSIONID.name}=${JSESSIONID.value};${XSRFTOKEN.name}=${XSRFTOKEN.value};${LastLoginTime.name}=${LastLoginTime.value};${lbSession.name}=${lbSession.value}`;
 }
 
 /// --------------------------------
